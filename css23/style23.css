@@ -1,0 +1,8 @@
+.one,
+.two {
+  display: none;
+  margin-top: 30px;
+}
+body{
+  background-color: bisque;
+}
