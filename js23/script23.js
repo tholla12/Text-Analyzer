@@ -77,4 +77,23 @@ function boldPassage(word, text) {
   return htmlString + "</p>";
 }
 
+$(document).ready(function () {
+  $("form#word-counter").submit(function (event) {
+    event.preventDefault();
+    const passage = $("#text-passage").val();
+    const word = $("#word").val();
+    const wordCount = wordCounter(passage);
+    const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
+    const bold = boldPassage(word, passage);
+    const offe = offensiveWords(bold)
+    $("#total-count").html(wordCount);
+    $("#selected-count").html(occurrencesOfWord);
+    $("#offense").html(offe)
+    $(".one").show();
+    $(".two").show();
+    
+  });
+
+}); 5
+
 
