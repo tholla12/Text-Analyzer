@@ -36,4 +36,24 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }
 
+function offensiveWords(text) {
+  let offensiveTag = "<p>"
+  const offenceArray = text.split(" ");
+  offenceArray.forEach(function (element, index) {
+    let offensiveWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+    offensiveWords.forEach(function (e) {
+      if (element.toLowerCase().includes(e.toLowerCase())) {
+        element = "xx"
+        offensiveTag = offensiveTag.concat(element)
+
+      }
+    });
+    offensiveTag = offensiveTag.concat(element);
+    if (index != (offenceArray.length - 1)) {
+      offensiveTag = offensiveTag.concat(" ");
+    }
+  });
+  return offensiveTag + "</p>";
+}
+
 
